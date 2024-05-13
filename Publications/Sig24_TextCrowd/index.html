@@ -152,19 +152,19 @@
 <!-- Paper method -->
 <section class="hero is-small">
   <div class="hero-body">
-  <div class="container">
+  <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">Method</h2>
+        <h2 class="title is-3">Pipeline</h2>
         <div class="content has-text-justified">
           <p>We introduce the first-ever pipeline that targets at language-guided generation of environment-compatible scenarios involving a large number of agents navigating in real-time. </p>
           <h5>The overall pipeline:</h5>
           <img src="static/images/Pipeline.jpg"/>
-          <p>We assume agents are divided into multiple groups with similar goals, where each group is controlled by a common velocity field. </p>
+          <p>We assume agents are divided into multiple groups where each group is controlled by a common velocity field. Our method takes as input a map of the environment, and a general script describing the behavior of these groups.</p>
           <ul>
-            <li>Our method takes as input a map of the environment, and a general script describing the behavior of multiple groups of agents. </li>
             <li>We utilize the powerful Large Language Models (LLM) to canonicalize the script into a set of structured sentences, one for each agent group.</li>
-            <li>Each structured sentence is then input to Latent Diffusion Models (LDMs) to predict the start/goal agent distribution and guiding velocity field for the agent group. Agents are sampled according to the distribution map and velocity field is used to guide the RVO agent simulator.</li>
+            <li>Each structured sentence is then input to Latent Diffusion Models (LDMs) to predict the start/goal agent distribution and guiding velocity field for the agent group.</li>
+            <li>Agents are sampled according to the distribution map and velocity field is used to guide the RVO agent simulator.</li>
           </ul>
         </div>
       </div>
@@ -173,6 +173,84 @@
   </div>
 </section>
 <!-- End paper method -->
+
+<!-- Paper method -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Dataset Construction</h2>
+        <div class="content has-text-justified">
+          <p>As there is no existing datasets that provide the complete set of the environment map, group-wise description and behavior, we propose a constructive method for data generation.</p>
+          <p>We randomly sample the environment with multiple entities:</p>
+          <img src="static/images/entities.png"/>
+          <p>With sampled agent group paths in the environment, we generate the groundtruth canonical sentences:</p>
+          <img src="static/images/sentence_structure.png"/>
+          <p>Guided by the sampled path, we construct the velocity field and propose a simulation-assisted velocity adjustment procedure:</p>
+          <table width=100% height=100% class="has-text-centered" style="table-layout: fixed;">
+            <tr>
+              <td>
+                <video id="videof1" autoplay controls muted loop height="100%">
+                  <source src="static/videos/field_v1.mp4" type="video/mp4">
+                </video>
+                <h7>Initial velocity field</h7>
+              </td>
+              <td>
+                <video id="videof2" autoplay controls muted loop height="100%">
+                  <source src="static/videos/field_v2.mp4" type="video/mp4">
+                </video>
+                <h7>Adjusted velocity field</h7>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<!-- End paper method -->
+
+
+
+<!-- Paper result -->
+<section class="hero is-small">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Qualitative Results</h2>
+        <div class="content has-text-justified">
+          <p>We show the generated diversified dynamic crowd animation scenarios. Please refer to the main paper and supplementary material for detailed text descriptions and velocity fields.</p>
+          <table width=100% height=100% class="has-text-centered" style="table-layout: fixed;">
+            <tr>
+              <td>
+                <video id="videof1" autoplay controls muted loop height="100%">
+                  <source src="static/videos/field_v1.mp4" type="video/mp4">
+                </video>
+                <h7>Initial velocity field</h7>
+              </td>
+              <td>
+                <video id="videof2" autoplay controls muted loop height="100%">
+                  <source src="static/videos/field_v2.mp4" type="video/mp4">
+                </video>
+                <h7>Adjusted velocity field</h7>
+              </td>
+            </tr>
+            
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<!-- End paper result -->
+
+
+
+
 
 <!-- Image carousel -->
 <section class="hero is-small">
