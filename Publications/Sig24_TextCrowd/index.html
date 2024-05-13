@@ -160,7 +160,12 @@
           <p>We introduce the first-ever pipeline that targets at language-guided generation of environment-compatible scenarios involving a large number of agents navigating in real-time. </p>
           <h5>The overall pipeline:</h5>
           <img src="static/images/Pipeline.jpg"/>
-          
+          <p>We assume agents are divided into multiple groups with similar goals, where each group is controlled by a common velocity field. </p>
+          <ul>
+            <li>Our method takes as input a map of the environment, and a general script describing the behavior of multiple groups of agents. </li>
+            <li>We utilize the powerful Large Language Models (LLM) to canonicalize the script into a set of structured sentences, one for each agent group.</li>
+            <li>Each structured sentence is then input to Latent Diffusion Models (LDMs) to predict the start/goal agent distribution and guiding velocity field for the agent group. Agents are sampled according to the distribution map and velocity field is used to guide the RVO agent simulator.</li>
+          </ul>
         </div>
       </div>
     </div>
